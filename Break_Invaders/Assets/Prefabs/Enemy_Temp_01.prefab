@@ -125,5 +125,5 @@ MonoBehaviour:
   projPrefab: {fileID: 4058082604938066046, guid: e0738654093f2ac408e1fdf80a4ba5ad,
     type: 3}
   projectileNumber: 5
-  shootForce: 3
+  shootForce: 5
   shootRate: 5

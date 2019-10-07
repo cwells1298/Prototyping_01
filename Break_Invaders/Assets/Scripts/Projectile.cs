@@ -9,8 +9,7 @@ public class Projectile : MonoBehaviour
     public bool inUse = false;
 
     [SerializeField]
-    private float maxDespawnTime = 2.5f;
-    private float currentDespawnTime = 0.0f;
+    private float maxDespawnTime = 2.5f, currentDespawnTime = 0.0f, maxVelocity = 10.0f, damage = 1.0f;
 
     private Transform parent;
 
@@ -36,6 +35,12 @@ public class Projectile : MonoBehaviour
         if (inUse)
         {
             currentDespawnTime += Time.deltaTime;
+
+            //Limit projectile velocity to avoid unwanted behaviour and favour collision detection
+            if (rb.velocity.sqrMagnitude > maxVelocity * maxVelocity)
+            {
+                rb.velocity = rb.velocity.normalized * maxVelocity;
+            }
 
             if (currentDespawnTime >= maxDespawnTime)
             {
@@ -78,5 +83,10 @@ public class Projectile : MonoBehaviour
         transform.localRotation = Quaternion.identity;
         rb.velocity = Vector3.zero;
         gameObject.SetActive(false);
+    }
+
+    public float GetDamage()
+    {
+        return damage;
     }
 }

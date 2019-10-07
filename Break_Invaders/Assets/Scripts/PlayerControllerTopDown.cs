@@ -29,7 +29,8 @@ public class PlayerControllerTopDown : MonoBehaviour
 
         if (v != 0 || s != 0 )
         {
-            rb.velocity = (transform.forward * v) + (transform.right * s);
+            rb.velocity = (Vector3.forward * v) + (Vector3.right * s);
+            //rb.velocity = (transform.forward * v) + (transform.right * s);
         }
 
         //TODO decide on velocity vs translate (i.e. player skidding about?, could be good for environemtnal effects)

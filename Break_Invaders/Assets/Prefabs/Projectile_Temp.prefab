@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inUse: 0
-  maxDespawnTime: 10
+  maxDespawnTime: 20
+  currentDespawnTime: 0
+  maxVelocity: 10
   currentBounces: 0
-  maxBounces: 2
+  maxBounces: 5
