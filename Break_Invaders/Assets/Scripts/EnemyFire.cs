@@ -12,10 +12,12 @@ public class EnemyFire : MonoBehaviour
     private int projectileNumber = 3;
 
     [SerializeField]
-    private float shootForce = 500.0f, shootRate = 1.5f;//Once every x seconds
+    private float shootForce = 10.0f, shootRate = 1.5f;//Once every x seconds
 
     private float shootCooldown = 0.0f;
     private bool onCooldown = false;
+
+    public EnemyController ec;
     
     // Start is called before the first frame update
     void Start()
@@ -31,19 +33,22 @@ public class EnemyFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (onCooldown)
+        if (!ec.needToMove)
         {
-            shootCooldown += Time.deltaTime;
-            if (shootCooldown >= shootRate)
+            if (onCooldown)
             {
-                onCooldown = false;
-                shootCooldown = 0.0f;
+                shootCooldown += Time.deltaTime;
+                if (shootCooldown >= shootRate)
+                {
+                    onCooldown = false;
+                    shootCooldown = 0.0f;
+                }
             }
-        }
-        else
-        {
-            CheckFireProjectile();
-        }
+            else
+            {
+                CheckFireProjectile();
+            }
+        }   
     }
 
     private void CheckFireProjectile()

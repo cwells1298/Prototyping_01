@@ -120,12 +120,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4058082604938066046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18a5f428c875eaa4d92ee37307a7ab47, type: 3}
+  m_Script: {fileID: 11500000, guid: b5a55e9b1e5f3c54288fd1a76ff3ea02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inUse: 0
   maxDespawnTime: 20
   currentDespawnTime: 0
   maxVelocity: 10
+  damage: 1
   currentBounces: 0
-  maxBounces: 5
+  maxBounces: 10

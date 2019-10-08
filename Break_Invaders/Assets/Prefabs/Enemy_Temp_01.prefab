@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 90694407435115330}
   - component: {fileID: 8942232043241595252}
   - component: {fileID: 3397325732908375437}
+  - component: {fileID: 6380712246565160152}
   m_Layer: 9
   m_Name: Enemy_Temp_01
   m_TagString: Untagged
@@ -79,6 +80,23 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6380712246565160152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970327475679799633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f436dd1f508e0d48805cadb9b85e0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needToMove: 1
+  targetPosition: {x: 0, y: 0, z: 0}
+  startPos: {x: 0, y: 0, z: 0}
+  maxMoveTime: 2.5
+  currentMoveTime: 0
 --- !u!1 &4915822872721714940
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4915822872721714941}
-  - component: {fileID: 4915822872721714882}
+  - component: {fileID: 788876291998280614}
   m_Layer: 9
   m_Name: ProjectileSpawn
   m_TagString: Untagged
@@ -110,7 +128,7 @@ Transform:
   m_Father: {fileID: 90694407435115330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4915822872721714882
+--- !u!114 &788876291998280614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,11 +137,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4915822872721714940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8acabd2b33f704e8682047ddd94953, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bd99f919f4f23340ba7a92716f0a657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projPrefab: {fileID: 4058082604938066046, guid: e0738654093f2ac408e1fdf80a4ba5ad,
     type: 3}
-  projectileNumber: 5
-  shootForce: 5
-  shootRate: 5
+  projectileNumber: 3
+  shootForce: 10
+  shootRate: 1.5
+  ec: {fileID: 6380712246565160152}

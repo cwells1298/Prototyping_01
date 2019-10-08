@@ -9,14 +9,14 @@ public class Projectile : MonoBehaviour
     public bool inUse = false;
 
     [SerializeField]
-    private float maxDespawnTime = 2.5f, currentDespawnTime = 0.0f, maxVelocity = 10.0f, damage = 1.0f;
+    private float maxDespawnTime = 20.0f, currentDespawnTime = 0.0f, maxVelocity = 10.0f, damage = 1.0f;
 
     private Transform parent;
 
     [SerializeField]
     private int currentBounces = 0;
     [SerializeField]
-    private int maxBounces = 2;
+    private int maxBounces = 10;
 
     private Rigidbody rb;
     private MeshCollider mc;
@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
             currentDespawnTime += Time.deltaTime;
 
             //Limit projectile velocity to avoid unwanted behaviour and favour collision detection
-            if (rb.velocity.sqrMagnitude > maxVelocity * maxVelocity)
+            if (rb.velocity.sqrMagnitude != maxVelocity * maxVelocity)
             {
                 rb.velocity = rb.velocity.normalized * maxVelocity;
             }
