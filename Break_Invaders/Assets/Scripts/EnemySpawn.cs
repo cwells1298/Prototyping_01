@@ -20,7 +20,7 @@ public class EnemySpawn : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        int rand = Random.Range(0, enemyPrefabs.Length - 1);
+        int rand = Random.Range(0, enemyPrefabs.Length);
 
         int rand2 = Random.Range(0, firingPositions.Length - 1);
 

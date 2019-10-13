@@ -21,6 +21,8 @@ public class Projectile : MonoBehaviour
     private Rigidbody rb;
     private MeshCollider mc;
 
+    public bool hurtEnemy = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,9 +63,10 @@ public class Projectile : MonoBehaviour
     {
         Debug.Log("Collision: " + collision.gameObject.tag);
 
-        if (collision.gameObject.tag == "Environment" || collision.gameObject.tag == "Shield")
+        if (collision.gameObject.tag == "Environment" || collision.gameObject.tag == "Shield" || collision.gameObject.tag == "Target")
         {
             currentBounces++;
+            hurtEnemy = true;
 
             if (currentBounces >= maxBounces)
             {
@@ -72,7 +75,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void ResetProjectile()
+    public void ResetProjectile()
     {
         currentBounces = 0;
         currentDespawnTime = 0.0f;
@@ -82,6 +85,7 @@ public class Projectile : MonoBehaviour
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
         rb.velocity = Vector3.zero;
+        hurtEnemy = false;
         gameObject.SetActive(false);
     }
 

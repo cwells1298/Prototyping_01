@@ -9,6 +9,8 @@ public class Target : MonoBehaviour
 
     private float currentHealth;
 
+    public TargetCollection tc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class Target : MonoBehaviour
         if (collision.gameObject.tag == "Projectile")
         {
             Projectile projectile = collision.gameObject.GetComponent<Projectile>();
+            projectile.ResetProjectile();
             TakeDamage(projectile.GetDamage());
         }
     }
@@ -36,7 +39,8 @@ public class Target : MonoBehaviour
         if (currentHealth <= 0.0f)
         {
             currentHealth = 0.0f;
-            //TODO game wide impact e.g. level has list of targets, reduce payout for each target lost, give player temp powerup, lose game when all targets lost
+
+            tc.TargetDestroyed(this);
 
             Destroy(gameObject);
         }
