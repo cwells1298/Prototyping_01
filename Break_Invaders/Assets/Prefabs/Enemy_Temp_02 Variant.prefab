@@ -75,12 +75,18 @@ PrefabInstance:
     - target: {fileID: 788876291998280614, guid: 81c04b84be18c6142b1609ce6902b707,
         type: 3}
       propertyPath: shootForce
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 788876291998280614, guid: 81c04b84be18c6142b1609ce6902b707,
         type: 3}
       propertyPath: shootRate
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 788876291998280614, guid: 81c04b84be18c6142b1609ce6902b707,
+        type: 3}
+      propertyPath: projPrefab
+      value: 
+      objectReference: {fileID: 228101243027655623, guid: 1397577e81ad7bd4695a8c4b282c3d3b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81c04b84be18c6142b1609ce6902b707, type: 3}

@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Target
   - Enemy
+  - Destructible
   layers:
   - Default
   - TransparentFX

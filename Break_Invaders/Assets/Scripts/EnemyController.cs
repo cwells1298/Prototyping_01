@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
@@ -29,7 +27,9 @@ public class EnemyController : MonoBehaviour
                 transform.position = targetPosition;
                 needToMove = false;
                 float startRot = transform.localEulerAngles.y;
-                float newRot = Random.Range(-rotationMax, rotationMax);
+                float rand1 = Random.Range(0.0f,1.0f);
+                float rand2 = Random.Range(0.0f, 1.0f);
+                float newRot = (rand1 - rand2) * rotationMax;
                 transform.Rotate(new Vector3(0.0f, newRot, 0.0f));
                 bool validFacing = false;
 
@@ -44,7 +44,9 @@ public class EnemyController : MonoBehaviour
                             validFacing = false;
 
                             transform.localEulerAngles = new Vector3(0.0f, startRot, 0.0f);
-                            newRot = Random.Range(-rotationMax, rotationMax);
+                            rand1 = Random.Range(0.0f, 1.0f);
+                            rand2 = Random.Range(0.0f, 1.0f);
+                            newRot = (rand1 - rand2) * rotationMax;
                             transform.Rotate(new Vector3(0.0f, newRot, 0.0f));
                         }
                         else

@@ -13,6 +13,7 @@ public class TargetCollection : MonoBehaviour
 
     public int startCount = 0;
 
+    private ScoreSystem sc;
     /*TODO game wide impact e.g. level has list of targets, reduce payout for each target lost,
      * give player temp powerup, lose game when all targets lost*/
 
@@ -23,6 +24,8 @@ public class TargetCollection : MonoBehaviour
             target.tc = this;
         }
         startCount = targets.Count;
+
+        sc = FindObjectOfType<ScoreSystem>();
     }
 
     public void TargetDestroyed(Target target)
@@ -36,7 +39,7 @@ public class TargetCollection : MonoBehaviour
         {
             Debug.Log("Game Over - Too Many Targets Destroyed");
             gameOver = true;
-            //TODO Game over
+            sc.GameOver();
         }
     }
 }

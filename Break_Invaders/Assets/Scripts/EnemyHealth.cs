@@ -1,16 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     private float maxHealth = 5.0f;
 
+    [SerializeField]
+    private int goldPayout = 1;
+
     private float currentHealth;
+
+    private ScoreSystem sc;
     void Start()
     {
         currentHealth = maxHealth;
+        sc = FindObjectOfType<ScoreSystem>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -32,7 +36,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0.0f)
         {
             currentHealth = 0.0f;
-
+            sc.AddToScore(goldPayout);
             Destroy(gameObject);
         }
     }

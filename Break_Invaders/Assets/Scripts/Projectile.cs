@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(MeshCollider))]
@@ -9,21 +7,22 @@ public class Projectile : MonoBehaviour
     public bool inUse = false;
 
     [SerializeField]
-    private float maxDespawnTime = 20.0f, currentDespawnTime = 0.0f, maxVelocity = 10.0f, damage = 1.0f;
+    protected float maxDespawnTime = 20.0f, currentDespawnTime = 0.0f, maxVelocity = 10.0f, damage = 1.0f;
 
-    private Transform parent;
+    protected Transform parent;
 
     [SerializeField]
-    private int currentBounces = 0;
+    protected int currentBounces = 0;
     [SerializeField]
-    private int maxBounces = 10;
+    protected int maxBounces = 10;
 
-    private Rigidbody rb;
-    private MeshCollider mc;
+    protected Rigidbody rb;
+    [SerializeField]
+    protected MeshCollider mc;
 
     public bool hurtEnemy = false;
 
-    private void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         mc = GetComponent<MeshCollider>();
@@ -32,7 +31,7 @@ public class Projectile : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void Update()
+    protected void Update()
     {
         if (inUse)
         {
@@ -51,7 +50,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Fire(Vector3 direction, float force)
+    public virtual void Fire(Vector3 direction, float force)
     {
         inUse = true;
         transform.parent = null;
@@ -59,7 +58,7 @@ public class Projectile : MonoBehaviour
         rb.AddForce(direction * force);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision: " + collision.gameObject.tag);
 
@@ -75,7 +74,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void ResetProjectile()
+    public virtual void ResetProjectile()
     {
         currentBounces = 0;
         currentDespawnTime = 0.0f;

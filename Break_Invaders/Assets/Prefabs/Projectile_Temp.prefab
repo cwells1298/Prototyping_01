@@ -126,8 +126,9 @@ MonoBehaviour:
   inUse: 0
   maxDespawnTime: 10
   currentDespawnTime: 0
-  maxVelocity: 10
+  maxVelocity: 7.5
   damage: 1
   currentBounces: 0
   maxBounces: 10
+  mc: {fileID: 0}
   hurtEnemy: 0
