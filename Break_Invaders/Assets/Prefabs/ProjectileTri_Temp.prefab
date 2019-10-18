@@ -15,18 +15,21 @@ MonoBehaviour:
   inUse: 0
   maxDespawnTime: 10
   currentDespawnTime: 0
-  maxVelocity: 7.5
+  maxVelocity: 6.5
   damage: 1
+  rotationSpeed: 100
   currentBounces: 0
   maxBounces: 1
   mc: {fileID: 0}
   hurtEnemy: 0
+  activeDamage: 0
+  activeDamageCooldown: 0.1
   splitPrefab: {fileID: 4963602483678609537, guid: eb42735e788733546b142112b7e99107,
     type: 3}
   projectiles: []
   shootForce: 10
   projectileNumber: 3
-  fireSpread: 45
+  fireSpread: 60
 --- !u!1001 &4286112378367210425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,6 +97,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8309541290217812059, guid: e0738654093f2ac408e1fdf80a4ba5ad,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8487845376024020515, guid: a79899e65b4bbef43b0fb0b451c16de9,
+        type: 3}
+    - target: {fileID: 2336773011599019170, guid: e0738654093f2ac408e1fdf80a4ba5ad,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336773011599019170, guid: e0738654093f2ac408e1fdf80a4ba5ad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -4973734387028869240, guid: a79899e65b4bbef43b0fb0b451c16de9,
+        type: 3}
+    - target: {fileID: 2336773011599019170, guid: e0738654093f2ac408e1fdf80a4ba5ad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -389402008792246631, guid: a79899e65b4bbef43b0fb0b451c16de9,
+        type: 3}
+    - target: {fileID: 2273947931018107754, guid: e0738654093f2ac408e1fdf80a4ba5ad,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8487845376024020515, guid: a79899e65b4bbef43b0fb0b451c16de9,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 7508950161659274608, guid: e0738654093f2ac408e1fdf80a4ba5ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0738654093f2ac408e1fdf80a4ba5ad, type: 3}

@@ -9,11 +9,16 @@ public class PlayerControllerTopDown : MonoBehaviour
     private Rigidbody rb;
 
     private TargetCollection tc;
+
+    private bool cursorVisible = false;
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         tc = GetComponent<TargetCollection>();
+        Cursor.visible = false;
+        Cursor.visible = true;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -42,6 +47,12 @@ public class PlayerControllerTopDown : MonoBehaviour
                 rb.velocity = (Vector3.forward * v) + (Vector3.right * s);
                 //rb.velocity = (transform.forward * v) + (transform.right * s);
             }
+        }
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            cursorVisible = !cursorVisible;
+            Cursor.visible = cursorVisible;
         }
     }
 }

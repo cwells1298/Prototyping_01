@@ -10,8 +10,11 @@ public class DestructibleChild : MonoBehaviour
         if (collision.gameObject.tag == "Projectile")
         {
             Projectile projectile = collision.gameObject.GetComponent<Projectile>();
-            projectile.ResetProjectile();
-            dObject.TakeDamage(projectile.GetDamage());
+            if (projectile.activeDamage)
+            {
+                projectile.ResetProjectile();
+                dObject.TakeDamage(projectile.GetDamage());
+            }
         }
     }
 }

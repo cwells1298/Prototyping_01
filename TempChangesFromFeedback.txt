@@ -1,3 +1,15 @@
 changes
 =======
-projectile velocity decreased by 25% (10-7.5)
+projectile velocity decreased (10->7.5->6.5) (may need further tweaking)
+
+Lower window ledge lowered (barricade altered to match)
+
+Direction marker added for enemies
+
+Triple attack damage briefly disabled upon initial split
+
+Slight randomness to enemy's attack cooldown, shoudl prevent all enemies firing at same time
+
+Fewer barricades at game start
+
+Enemy's firing status indicated by colour of direction marker

@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4058082604938066046}
-  m_Mesh: {fileID: 289301614986012343, guid: 9eec33f776d5325488852dc7cd96a089, type: 3}
+  m_Mesh: {fileID: -6561623048535504736, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
 --- !u!23 &2336773011599019170
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,7 +60,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3c5956c34cc390d48907e0c0e4421972, type: 2}
+  - {fileID: 4360331139241207449, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
+  - {fileID: 3934591437828580715, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
+  - {fileID: -1444460858095362738, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
+  - {fileID: -4973734387028869240, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
+  - {fileID: 7940512868086744039, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,7 +114,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
-  m_Mesh: {fileID: 289301614986012343, guid: 9eec33f776d5325488852dc7cd96a089, type: 3}
+  m_Mesh: {fileID: -6561623048535504736, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
 --- !u!114 &7508950161659274608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,9 +130,12 @@ MonoBehaviour:
   inUse: 0
   maxDespawnTime: 10
   currentDespawnTime: 0
-  maxVelocity: 7.5
+  maxVelocity: 7
   damage: 1
+  rotationSpeed: 0
   currentBounces: 0
   maxBounces: 10
   mc: {fileID: 0}
   hurtEnemy: 0
+  activeDamage: 0
+  activeDamageCooldown: 0.05

@@ -9,16 +9,9 @@ public class Target : MonoBehaviour
 
     public TargetCollection tc;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -26,8 +19,11 @@ public class Target : MonoBehaviour
         if (collision.gameObject.tag == "Projectile")
         {
             Projectile projectile = collision.gameObject.GetComponent<Projectile>();
-            projectile.ResetProjectile();
-            TakeDamage(projectile.GetDamage());
+            if (projectile.activeDamage)
+            {
+                projectile.ResetProjectile();
+                TakeDamage(projectile.GetDamage());
+            }
         }
     }
 

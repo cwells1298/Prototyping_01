@@ -49,17 +49,12 @@ public class TripleProjectile : Projectile
 
     protected override void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision: " + collision.gameObject.tag);
-
-       
-        //TODO Split into 3 projectiles
         if (collision.gameObject.tag == "Environment" || collision.gameObject.tag == "Shield" || collision.gameObject.tag == "Target")
         {
             foreach (Projectile projectile in projectiles)
             {
                 projectile.transform.parent = null;
             }
-
 
             projectiles[0].gameObject.SetActive(true);
             projectiles[0].Fire(Quaternion.Euler(0.0f, fireSpread, 0.0f) * transform.forward, shootForce);

@@ -82,6 +82,24 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8309541290217812059, guid: e0738654093f2ac408e1fdf80a4ba5ad,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8269699034371843587, guid: f5c5d87fe32f7b048abbf48bf218dde0,
+        type: 3}
+    - target: {fileID: 2336773011599019170, guid: e0738654093f2ac408e1fdf80a4ba5ad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -4973734387028869240, guid: f5c5d87fe32f7b048abbf48bf218dde0,
+        type: 3}
+    - target: {fileID: 2273947931018107754, guid: e0738654093f2ac408e1fdf80a4ba5ad,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8269699034371843587, guid: f5c5d87fe32f7b048abbf48bf218dde0,
+        type: 3}
     - target: {fileID: 7508950161659274608, guid: e0738654093f2ac408e1fdf80a4ba5ad,
         type: 3}
       propertyPath: maxDespawnTime
@@ -96,6 +114,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxVelocity
       value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7508950161659274608, guid: e0738654093f2ac408e1fdf80a4ba5ad,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0738654093f2ac408e1fdf80a4ba5ad, type: 3}
