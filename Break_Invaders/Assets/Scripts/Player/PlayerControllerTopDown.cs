@@ -10,15 +10,15 @@ public class PlayerControllerTopDown : MonoBehaviour
 
     private TargetCollection tc;
 
+    private PlayerSpeedPush push;
+
     private bool cursorVisible = false;
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         tc = GetComponent<TargetCollection>();
-        Cursor.visible = false;
-        Cursor.visible = true;
-        Cursor.visible = false;
+        push = GetComponent<PlayerSpeedPush>();
     }
 
     // Update is called once per frame
@@ -42,17 +42,15 @@ public class PlayerControllerTopDown : MonoBehaviour
                 transform.LookAt(new Vector3(mouseHit.point.x, transform.position.y, mouseHit.point.z));
             }
 
-            if (v != 0 || s != 0)
+            if(!push.pushInProgress)
             {
-                rb.velocity = (Vector3.forward * v) + (Vector3.right * s);
-                //rb.velocity = (transform.forward * v) + (transform.right * s);
+                if (v != 0 || s != 0)
+                {
+                    rb.velocity = (Vector3.forward * v) + (Vector3.right * s);
+                    //rb.velocity = (transform.forward * v) + (transform.right * s);
+                }
             }
         }
 
-        if (Input.GetButtonDown("Cancel"))
-        {
-            cursorVisible = !cursorVisible;
-            Cursor.visible = cursorVisible;
-        }
     }
 }

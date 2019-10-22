@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2273947931018107754}
   - component: {fileID: 7508950161659274608}
   m_Layer: 10
-  m_Name: Projectile_Temp
+  m_Name: Projectile_Main_Clipboard
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4058082604938066046}
-  m_Mesh: {fileID: -6561623048535504736, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: 9a958edac8cdba643a22383945de3f25, type: 3}
 --- !u!23 &2336773011599019170
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,11 +60,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4360331139241207449, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
-  - {fileID: 3934591437828580715, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
-  - {fileID: -1444460858095362738, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
-  - {fileID: -4973734387028869240, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
-  - {fileID: 7940512868086744039, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
+  - {fileID: -1444460858095362738, guid: 9a958edac8cdba643a22383945de3f25, type: 3}
+  - {fileID: 2565534315720911105, guid: 9a958edac8cdba643a22383945de3f25, type: 3}
+  - {fileID: -4973734387028869240, guid: 9a958edac8cdba643a22383945de3f25, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,7 +112,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
-  m_Mesh: {fileID: -6561623048535504736, guid: 9d27cc60a05d1f54cbba5fc4ffcfdccb, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: 9a958edac8cdba643a22383945de3f25, type: 3}
 --- !u!114 &7508950161659274608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,10 +130,10 @@ MonoBehaviour:
   currentDespawnTime: 0
   maxVelocity: 7
   damage: 1
-  rotationSpeed: 0
+  rotationSpeed: 100
   currentBounces: 0
   maxBounces: 10
   mc: {fileID: 0}
   hurtEnemy: 0
   activeDamage: 0
-  activeDamageCooldown: 0.05
+  activeDamageCooldown: 0.025

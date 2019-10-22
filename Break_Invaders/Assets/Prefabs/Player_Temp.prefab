@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 446912556}
   - component: {fileID: 446912555}
   - component: {fileID: 7266913302992897758}
-  m_Layer: 0
+  - component: {fileID: 482820553}
+  - component: {fileID: 1433933879432240360}
+  m_Layer: 8
   m_Name: Player_Temp
   m_TagString: Shield
   m_Icon: {fileID: 0}
@@ -127,6 +129,40 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 2534964839176971238, guid: 365b69e8c56fb254184bf462b67e1899, type: 3}
+--- !u!114 &482820553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840343423777118001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a32563dd8e6acc4684b31440a5c6d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  failPercentage: 0.25
+  gameOver: 0
+  startCount: 0
+--- !u!114 &1433933879432240360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840343423777118001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf192e862ac9b948b27147976b2cbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 10
+  pushCooldownMax: 5
 --- !u!64 &1543977986
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -152,6 +188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shield_Temp
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 523a3a19dddfcb14f8ca2c572508195d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 523a3a19dddfcb14f8ca2c572508195d,
         type: 3}
@@ -218,6 +259,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.575
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 523a3a19dddfcb14f8ca2c572508195d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: af5d0b859a6dd7246b05002e7c26917c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 523a3a19dddfcb14f8ca2c572508195d, type: 3}
 --- !u!1 &7840343424200477430 stripped

@@ -62,19 +62,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DestructibleChild.cs" />
-    <Compile Include="Assets\Scripts\DestructibleObject.cs" />
-    <Compile Include="Assets\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\EnemyFire.cs" />
-    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
-    <Compile Include="Assets\Scripts\EnemySpawn.cs" />
-    <Compile Include="Assets\Scripts\FiringPosition.cs" />
-    <Compile Include="Assets\Scripts\PlayerControllerTopDown.cs" />
-    <Compile Include="Assets\Scripts\Projectile.cs" />
-    <Compile Include="Assets\Scripts\ScoreSystem.cs" />
-    <Compile Include="Assets\Scripts\Target.cs" />
-    <Compile Include="Assets\Scripts\TargetCollection.cs" />
-    <Compile Include="Assets\Scripts\TripleProjectile.cs" />
+    <Compile Include="Assets\Scripts\Destructibles\DestructibleChild.cs" />
+    <Compile Include="Assets\Scripts\Destructibles\DestructibleObject.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyFire.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySpawn.cs" />
+    <Compile Include="Assets\Scripts\Enemy\FiringPosition.cs" />
+    <Compile Include="Assets\Scripts\LoadScene.cs" />
+    <Compile Include="Assets\Scripts\Player\MouseOptions.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerControllerTopDown.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerSpeedPush.cs" />
+    <Compile Include="Assets\Scripts\Player\SetMouseOptions.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\PiercingProjectile.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\TripleProjectile.cs" />
+    <Compile Include="Assets\Scripts\Target\ScoreSystem.cs" />
+    <Compile Include="Assets\Scripts\Target\Target.cs" />
+    <Compile Include="Assets\Scripts\Target\TargetCollection.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

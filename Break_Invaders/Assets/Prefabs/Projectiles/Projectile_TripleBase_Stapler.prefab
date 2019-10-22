@@ -23,7 +23,7 @@ MonoBehaviour:
   mc: {fileID: 0}
   hurtEnemy: 0
   activeDamage: 0
-  activeDamageCooldown: 0.1
+  activeDamageCooldown: 0.025
   splitPrefab: {fileID: 4963602483678609537, guid: eb42735e788733546b142112b7e99107,
     type: 3}
   projectiles: []
@@ -40,7 +40,7 @@ PrefabInstance:
     - target: {fileID: 4058082604938066046, guid: e0738654093f2ac408e1fdf80a4ba5ad,
         type: 3}
       propertyPath: m_Name
-      value: ProjectileTri_Temp
+      value: Projectile_TripleBase_Stapler
       objectReference: {fileID: 0}
     - target: {fileID: 1011741428580125293, guid: e0738654093f2ac408e1fdf80a4ba5ad,
         type: 3}
