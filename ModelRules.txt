@@ -1,0 +1,7 @@
+Model Rules
+===========
+Projectile travels at 1m high
+
+Maximum obstacle height should be 0.8m
+
+All targets should be along Y = 1
