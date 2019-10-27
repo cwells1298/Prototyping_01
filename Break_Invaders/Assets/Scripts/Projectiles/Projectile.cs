@@ -71,6 +71,11 @@ public class Projectile : MonoBehaviour
             {
                 ResetProjectile();
             }
+
+            if (!WaveHandler.waveActive)
+            {
+                ResetProjectile();
+            }
         }
     }
 

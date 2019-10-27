@@ -16,6 +16,8 @@ public class TargetCollection : MonoBehaviour
 
     public TextMeshProUGUI targetsLeftText;
 
+    public float targetCount = 0;
+
     private ScoreSystem sc;
     /*TODO game wide impact e.g. reduce payout for each target lost,
      * give player temp powerup*/
@@ -27,19 +29,22 @@ public class TargetCollection : MonoBehaviour
             target.tc = this;
         }
         startCount = targets.Count;
+        targetCount = startCount;
 
         sc = FindObjectOfType<ScoreSystem>();
 
-        targetsLeftText.text = "Targets Left: " + targets.Count;
+        targetsLeftText.text = "Targets Left: " + targetCount;
     }
 
     public void TargetDestroyed(Target target)
     {
-        targets.Remove(target);
+        //targets.Remove(target);
 
-        float percentageLeft = (float)targets.Count / (float)startCount;
+        targetCount--;
 
-        targetsLeftText.text = "Targets Left: " + targets.Count;
+        float percentageLeft = (float)targetCount/ (float)startCount;
+
+        targetsLeftText.text = "Targets Left: " + targetCount;
         if (percentageLeft <= failPercentage)
         {
             gameOver = true;

@@ -2,14 +2,15 @@
 using UnityEngine.UI;
 public class Target : MonoBehaviour
 {
-    [SerializeField]
-    private float maxHealth = 5.0f;
+    public float maxHealth = 5.0f;
 
-    private float currentHealth;
+    public float currentHealth;
 
     public TargetCollection tc;
 
     public Slider healthSlider;
+
+    public bool isDead = false;
 
     void Start()
     {
@@ -42,7 +43,11 @@ public class Target : MonoBehaviour
 
             tc.TargetDestroyed(this);
 
-            Destroy(transform.parent.gameObject);
+            isDead = true;
+
+            transform.parent.gameObject.SetActive(false);
+
+            //Destroy(transform.parent.gameObject);
         }
         else
         {

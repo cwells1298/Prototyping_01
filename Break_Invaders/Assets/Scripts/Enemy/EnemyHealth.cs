@@ -26,6 +26,14 @@ public class EnemyHealth : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        if (!WaveHandler.waveActive)
+        {
+            WaveEnd();
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Projectile")
@@ -52,6 +60,8 @@ public class EnemyHealth : MonoBehaviour
             sc.AddToScore(goldPayout);
             ec.firePos.inUse = false;
             ec.firePos.healthCanvas.SetActive(false);
+            FirePosScoreIndicator fpsi = ec.firePos.gameObject.GetComponent<FirePosScoreIndicator>();
+            fpsi.TriggerScore(goldPayout);
             Destroy(gameObject);
         }
         else
@@ -65,5 +75,14 @@ public class EnemyHealth : MonoBehaviour
         ec = GetComponent<EnemyController>();
         ec.firePos.healthSlider.maxValue = maxHealth;
         ec.firePos.healthSlider.value = maxHealth;
+    }
+
+    private void WaveEnd()
+    {
+        currentHealth = 0.0f;
+        ec.firePos.healthSlider.value = currentHealth;
+        ec.firePos.inUse = false;
+        ec.firePos.healthCanvas.SetActive(false);
+        Destroy(gameObject);
     }
 }

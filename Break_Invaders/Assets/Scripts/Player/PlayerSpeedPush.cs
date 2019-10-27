@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerSpeedPush : MonoBehaviour
 {
@@ -14,11 +15,15 @@ public class PlayerSpeedPush : MonoBehaviour
     private float pushCooldownTimer = 0.0f;
     private float pushInProgressTimer = 0.0f;
 
+    public Slider dashSlider;
+
     private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        dashSlider.maxValue = pushCooldownMax;
+        dashSlider.value = pushCooldownMax;
     }
 
     void Update()
@@ -29,6 +34,7 @@ public class PlayerSpeedPush : MonoBehaviour
             {
                 pushOnCooldown = true;
                 pushInProgress = true;
+                pushCooldownTimer = 0.0f;
 
                 rb.AddForce(transform.forward * pushForce);
             }
@@ -36,11 +42,16 @@ public class PlayerSpeedPush : MonoBehaviour
         else
         {
             pushCooldownTimer += Time.deltaTime;
+    
 
             if (pushCooldownTimer >= pushCooldownMax)
             {
                 pushOnCooldown = false;
-                pushCooldownTimer = 0.0f;
+                dashSlider.value = pushCooldownMax;
+            }
+            else
+            {
+                dashSlider.value = pushCooldownTimer;
             }
         }
 

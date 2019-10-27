@@ -17,14 +17,14 @@ public class ScoreSystem : MonoBehaviour
         currentGold += scoreIncrease;
         currentScore += scoreIncrease;
 
-        goldText.text = "Gold: " + currentGold.ToString();
+        goldText.text = "Supplies: " + currentGold.ToString();
         scoreText.text = "Score: " + currentScore.ToString();
     }
 
     public void SpendGold(int goldSpent)
     {
         currentGold -= goldSpent;
-        goldText.text = "Gold: " + currentGold.ToString();
+        goldText.text = "Supplies: " + currentGold.ToString();
     }
 
     public int GetGold()

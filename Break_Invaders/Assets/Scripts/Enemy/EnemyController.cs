@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour
             {
                 needToMove = false;
                 firePos.healthCanvas.SetActive(true);
-                if (tc.targets.Count >= 1)
+                if (tc.targetCount >= 1)
                 {
                     RotateToTarget();
                 }
@@ -49,7 +49,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            if (!tc.targets.Contains(target) && tc.targets.Count >= 1) //Check if current target is still alive
+            if (!tc.targets.Contains(target) && tc.targetCount >= 1) //Check if current target is still alive
             {
                 RotateToTarget();
             }
@@ -61,8 +61,17 @@ public class EnemyController : MonoBehaviour
 
     void RotateToTarget()
     {
-        int randTarget = Random.Range(0, tc.targets.Count);
-        target = tc.targets[randTarget];
+        bool validTarget = false;
+        while (!validTarget)
+        {
+            int randTarget = Random.Range(0, tc.targets.Count);
+            target = tc.targets[randTarget];
+
+            if (!target.isDead)
+            {
+                validTarget = true;
+            }
+        }    
 
         Vector3 targetPos = new Vector3(target.transform.position.x, 0.0f, target.transform.position.z);
  
