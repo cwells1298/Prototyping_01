@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 public class Target : MonoBehaviour
 {
     [SerializeField]
@@ -9,9 +9,13 @@ public class Target : MonoBehaviour
 
     public TargetCollection tc;
 
+    public Slider healthSlider;
+
     void Start()
     {
         currentHealth = maxHealth;
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -30,13 +34,20 @@ public class Target : MonoBehaviour
     private void TakeDamage(float dam)
     {
         currentHealth -= dam;
+
         if (currentHealth <= 0.0f)
         {
             currentHealth = 0.0f;
+            healthSlider.value = currentHealth;
 
             tc.TargetDestroyed(this);
 
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
+        }
+        else
+        {
+
+            healthSlider.value = currentHealth;
         }
     }
 }

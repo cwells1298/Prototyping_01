@@ -13,24 +13,40 @@ public class EnemySpawn : MonoBehaviour
     private int currentEnemiesSpawned = 0;
 
     public GameObject[] enemyPrefabs;
+    public int[] enemyPrefabsSpawnWeighting;
 
     private bool readyToSpawn = true;
 
     private void SpawnEnemies()
     {
-        int rand = Random.Range(0, enemyPrefabs.Length);
+        Transform firePos = GetFiringPosition();
 
-        int rand2 = Random.Range(0, firingPositions.Length - 1);
+        if (firePos != null)
+        {
+            int rand = Random.Range(0, enemyPrefabsSpawnWeighting[enemyPrefabsSpawnWeighting.Length - 1]);
 
-        GameObject newEnemy = Instantiate(enemyPrefabs[rand], enemyHolder);
-        
-        EnemyController ec = newEnemy.GetComponent<EnemyController>();
+            for (int i = 0; i < enemyPrefabs.Length; i++)
+            {
+                if (rand <= enemyPrefabsSpawnWeighting[i])
+                {
+                    GameObject newEnemy = Instantiate(enemyPrefabs[i], enemyHolder);
 
-        ec.startPos = transform.position;
-        ec.targetPosition = firingPositions[rand2].position;
+                    EnemyController ec = newEnemy.GetComponent<EnemyController>();
+                    EnemyHealth eh = newEnemy.GetComponent<EnemyHealth>();
 
-        readyToSpawn = false;
-        currentEnemiesSpawned++;
+                    ec.firePos = firePos.GetComponent<FiringPosition>();
+                    eh.SetDamageUI();
+
+                    ec.startPos = transform.position;
+                    ec.targetPosition = firePos.position;
+
+                    readyToSpawn = false;
+                    currentEnemiesSpawned++;
+
+                    break;
+                }
+            }
+        }       
     }
 
     private void Update()
@@ -49,6 +65,20 @@ public class EnemySpawn : MonoBehaviour
                 readyToSpawn = true;
             }
         }
+    }
+
+    private Transform GetFiringPosition()
+    {
+        foreach (Transform firePos in firingPositions)
+        {
+            if (!firePos.GetComponent<FiringPosition>().inUse)
+            {
+                firePos.GetComponent<FiringPosition>().inUse = true;
+                return firePos;
+            }
+        }
+
+        return null;
     }
 
 

@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FiringPosition : MonoBehaviour
 {
     public float fireDirection = 0.0f;
 
-    public Queue<EnemyController> enemyQueue;
+    public bool inUse = false;
 
-    public float queueDirection = 0.0f;
+    public GameObject healthCanvas;
 
-    public float queueStaggerDistance = 1.0f;
+    public Slider healthSlider;
+
 }

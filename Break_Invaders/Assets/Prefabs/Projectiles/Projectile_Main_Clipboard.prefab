@@ -136,4 +136,4 @@ MonoBehaviour:
   mc: {fileID: 0}
   hurtEnemy: 0
   activeDamage: 0
-  activeDamageCooldown: 0.025
+  activeDamageCooldown: 0.001

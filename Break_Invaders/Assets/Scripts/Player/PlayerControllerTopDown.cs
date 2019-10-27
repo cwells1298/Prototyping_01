@@ -28,18 +28,26 @@ public class PlayerControllerTopDown : MonoBehaviour
         {
             float v = Input.GetAxis("Vertical") * moveSpeed; //Forwards and Backwards
             float s = Input.GetAxis("Strafe") * strafeSpeed; //Strafe left and right
-                                                             //float r = Input.GetAxis("Horizontal") * rotationSpeed; //Rotate left and right
-
-            //if (r != 0)
-            //{
-            //    transform.Rotate(0.0f, r, 0.0f); //Rotate around y axis
-            //}
 
             RaycastHit mouseHit;
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(mouseRay, out mouseHit))
+            int layerMask = 1 << 8;
+            layerMask = ~layerMask;
+
+            if (Physics.Raycast(mouseRay, out mouseHit, Mathf.Infinity ,layerMask))
             {
-                transform.LookAt(new Vector3(mouseHit.point.x, transform.position.y, mouseHit.point.z));
+                if (Vector3.Distance(mouseHit.point, transform.position) > 1.75f)
+                {
+                    if (MouseOptions.mouseInverted)
+                    {
+                        transform.LookAt(new Vector3(-mouseHit.point.x, transform.position.y, -mouseHit.point.z));
+                    }
+                    else
+                    {
+                        transform.LookAt(new Vector3(mouseHit.point.x, transform.position.y, mouseHit.point.z));
+                    }
+                }            
+
             }
 
             if(!push.pushInProgress)

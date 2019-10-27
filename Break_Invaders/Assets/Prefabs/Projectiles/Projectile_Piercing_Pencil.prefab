@@ -16,14 +16,14 @@ MonoBehaviour:
   maxDespawnTime: 7.5
   currentDespawnTime: 0
   maxVelocity: 7.5
-  damage: 3
+  damage: 5
   rotationSpeed: 0
   currentBounces: 0
-  maxBounces: 3
+  maxBounces: 1
   mc: {fileID: 0}
   hurtEnemy: 0
   activeDamage: 0
-  activeDamageCooldown: 0.1
+  activeDamageCooldown: 0.001
 --- !u!1001 &5938258866855864595
 PrefabInstance:
   m_ObjectHideFlags: 0

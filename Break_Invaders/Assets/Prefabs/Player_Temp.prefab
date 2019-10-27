@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7840343423777118001}
-  m_Mesh: {fileID: 2534964839176971238, guid: 365b69e8c56fb254184bf462b67e1899, type: 3}
+  m_Mesh: {fileID: -4728807580002398413, guid: e9e32063c7f213c42a18edc8ba72076e, type: 3}
 --- !u!23 &8426983401371476973
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af5d0b859a6dd7246b05002e7c26917c, type: 2}
+  - {fileID: 9054928168843377129, guid: e9e32063c7f213c42a18edc8ba72076e, type: 3}
+  - {fileID: 4835078630258379571, guid: e9e32063c7f213c42a18edc8ba72076e, type: 3}
+  - {fileID: 6098924145076851180, guid: e9e32063c7f213c42a18edc8ba72076e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,7 +101,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &446912555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +151,7 @@ MonoBehaviour:
   failPercentage: 0.25
   gameOver: 0
   startCount: 0
+  targetsLeftText: {fileID: 0}
 --- !u!114 &1433933879432240360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,8 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf192e862ac9b948b27147976b2cbb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 10
-  pushCooldownMax: 5
+  pushForce: 15000
+  pushCooldownMax: 2.5
+  pushInProgressTimeMax: 0.35
+  pushInProgress: 0
 --- !u!64 &1543977986
 MeshCollider:
   m_ObjectHideFlags: 0
