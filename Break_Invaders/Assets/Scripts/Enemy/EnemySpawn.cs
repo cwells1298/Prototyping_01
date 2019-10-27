@@ -51,7 +51,7 @@ public class EnemySpawn : MonoBehaviour
 
     private void Update()
     {
-        if (readyToSpawn && currentEnemiesSpawned < maxEnemiesSpawned)
+        if (readyToSpawn && WaveHandler.waveActive)
         {
             SpawnEnemies();
         }

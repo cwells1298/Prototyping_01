@@ -910,7 +910,9 @@ MonoBehaviour:
 
     Rotate Character - Mouse Movement
 
-    Speed Push - Space
+    Dash - Space
+
+    Start Round - Tab
 
 '
   m_isRightToLeft: 0
@@ -981,12 +983,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 708697256}
-    characterCount: 75
+    characterCount: 87
     spriteCount: 0
-    spaceCount: 13
-    wordCount: 13
+    spaceCount: 16
+    wordCount: 16
     linkCount: 0
-    lineCount: 3
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1383,8 +1385,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Move your character around the map blocking projectiles.\nProtect the targets
-    (pink) from being hit by the various stationary being hurled at you by your co-workers.
+  m_text: "Move your character around the map blocking projectiles.\nProtect the food
+    from being hit by the various stationary being hurled at you by your co-workers.
     \nIf too many targets are destroyed, then you lose. \nGain score by killing enemies.
     \nLast as long as possible.\n"
   m_isRightToLeft: 0
@@ -1455,10 +1457,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1061836514}
-    characterCount: 275
+    characterCount: 265
     spriteCount: 0
-    spaceCount: 48
-    wordCount: 45
+    spaceCount: 47
+    wordCount: 44
     linkCount: 0
     lineCount: 6
     pageCount: 1
