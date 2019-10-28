@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\Target\ScoreSystem.cs" />
     <Compile Include="Assets\Scripts\Target\Target.cs" />
     <Compile Include="Assets\Scripts\Target\TargetCollection.cs" />
+    <Compile Include="Assets\Scripts\WaveSystem\UpgradeSystem.cs" />
     <Compile Include="Assets\Scripts\WaveSystem\WaveHandler.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

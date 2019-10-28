@@ -9,8 +9,11 @@ public class Target : MonoBehaviour
     public TargetCollection tc;
 
     public Slider healthSlider;
+    public Image sliderFill;
 
     public bool isDead = false;
+
+    public bool isInvulnerable = false;
 
     void Start()
     {
@@ -34,25 +37,28 @@ public class Target : MonoBehaviour
 
     private void TakeDamage(float dam)
     {
-        currentHealth -= dam;
-
-        if (currentHealth <= 0.0f)
+        if (!isInvulnerable)
         {
-            currentHealth = 0.0f;
-            healthSlider.value = currentHealth;
+            currentHealth -= dam;
 
-            tc.TargetDestroyed(this);
+            if (currentHealth <= 0.0f)
+            {
+                currentHealth = 0.0f;
+                healthSlider.value = currentHealth;
 
-            isDead = true;
+                tc.TargetDestroyed(this);
 
-            transform.parent.gameObject.SetActive(false);
+                isDead = true;
 
-            //Destroy(transform.parent.gameObject);
-        }
-        else
-        {
+                transform.parent.gameObject.SetActive(false);
 
-            healthSlider.value = currentHealth;
+                //Destroy(transform.parent.gameObject);
+            }
+            else
+            {
+
+                healthSlider.value = currentHealth;
+            }
         }
     }
 }

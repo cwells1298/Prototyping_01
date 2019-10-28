@@ -159,6 +159,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8544695319607093156, guid: ccc535f13b969544183f26bbd1d21765,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccc535f13b969544183f26bbd1d21765, type: 3}
 --- !u!224 &8331492910984198789 stripped
@@ -179,6 +184,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8331492910744807527 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8544695319607093156, guid: ccc535f13b969544183f26bbd1d21765,
+    type: 3}
+  m_PrefabInstance: {fileID: 363581789580464067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8331492912240638808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,11 +208,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target_02
       objectReference: {fileID: 0}
-    - target: {fileID: -4302079702948641789, guid: 4e0de02d81e55b74f9a3a36785345e98,
-        type: 3}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 8331492912020177158}
     - target: {fileID: 2735052003539650277, guid: 4e0de02d81e55b74f9a3a36785345e98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -261,6 +273,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -4302079702948641789, guid: 4e0de02d81e55b74f9a3a36785345e98,
+        type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 8331492912020177158}
+    - target: {fileID: -4302079702948641789, guid: 4e0de02d81e55b74f9a3a36785345e98,
+        type: 3}
+      propertyPath: sliderFill
+      value: 
+      objectReference: {fileID: 8331492910744807527}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e0de02d81e55b74f9a3a36785345e98, type: 3}
 --- !u!4 &6227268715360697789 stripped

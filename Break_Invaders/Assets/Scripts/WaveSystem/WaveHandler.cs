@@ -34,6 +34,7 @@ public class WaveHandler : MonoBehaviour
         currentWave++;
         waveActive = true;
         turnCounter.text = "Current Day: " + currentWave;
+        tc.targetCount = tc.targets.Count;
 
         foreach (Target target in tc.targets)
         {
