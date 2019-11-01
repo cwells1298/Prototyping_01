@@ -36,11 +36,11 @@ public class PlayerControllerTopDown : MonoBehaviour
 
             if (Physics.Raycast(mouseRay, out mouseHit, Mathf.Infinity ,layerMask))
             {
-                if (Vector3.Distance(mouseHit.point, transform.position) > 1.75f)
+               // if (Vector3.Distance(mouseHit.point, transform.position) > 1.75f)
                 {
                     if (MouseOptions.mouseInverted)
                     {
-                        transform.LookAt(new Vector3(-mouseHit.point.x, transform.position.y, -mouseHit.point.z));
+                        transform.LookAt(new Vector3(mouseHit.point.x, transform.position.y, mouseHit.point.z) * -1.0f);
                     }
                     else
                     {

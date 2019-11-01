@@ -27,13 +27,15 @@ public class Projectile : MonoBehaviour
     public float activeDamageCooldown = 0.1f;
     private float activeDamageTimer = 0.0f;
 
+
+
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         mc = GetComponent<MeshCollider>();
         parent = transform.parent;
         ResetProjectile();
-        gameObject.SetActive(false);
+        gameObject.SetActive(false);        
     }
 
     protected void Update()
@@ -92,6 +94,7 @@ public class Projectile : MonoBehaviour
     protected virtual void OnCollisionEnter(Collision collision)
     {
         //Debug.Log("Collision: " + collision.gameObject.tag);
+
 
         if (collision.gameObject.tag == "Environment" || collision.gameObject.tag == "Shield" || collision.gameObject.tag == "Target" || (collision.gameObject.tag == "Enemy" && inUse && hurtEnemy))
         {

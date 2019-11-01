@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEditor.UI;
+using UnityEngine.UI;
 using TMPro;
 
 public class ScoreSystem : MonoBehaviour

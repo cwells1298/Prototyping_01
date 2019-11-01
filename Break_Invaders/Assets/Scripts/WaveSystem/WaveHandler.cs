@@ -41,6 +41,7 @@ public class WaveHandler : MonoBehaviour
             target.currentHealth = target.maxHealth;
             target.healthSlider.value = target.currentHealth;
             target.isDead = false;
+            target.isDying = false;
             target.transform.parent.gameObject.SetActive(true);
         }
     }

@@ -15,11 +15,39 @@ public class Target : MonoBehaviour
 
     public bool isInvulnerable = false;
 
+    private AudioSource audioSource;
+
+    public float deathTimeMax = 0.5f;
+    public float deathTimecurrent = 0.0f;
+    public bool isDying = false;
+
     void Start()
     {
         currentHealth = maxHealth;
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        if (isDying)
+        {
+            deathTimecurrent += Time.deltaTime;
+            if (deathTimecurrent>=deathTimeMax)
+            {
+                deathTimecurrent = 0.0f;
+                isDying = false;
+                currentHealth = 0.0f;
+                healthSlider.value = currentHealth;
+
+                tc.TargetDestroyed(this);
+
+                isDead = true;
+
+                transform.parent.gameObject.SetActive(false);
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -31,6 +59,8 @@ public class Target : MonoBehaviour
             {
                 projectile.ResetProjectile();
                 TakeDamage(projectile.GetDamage());
+
+                audioSource.Play(0);
             }
         }
     }
@@ -43,14 +73,7 @@ public class Target : MonoBehaviour
 
             if (currentHealth <= 0.0f)
             {
-                currentHealth = 0.0f;
-                healthSlider.value = currentHealth;
-
-                tc.TargetDestroyed(this);
-
-                isDead = true;
-
-                transform.parent.gameObject.SetActive(false);
+                isDying = true;
 
                 //Destroy(transform.parent.gameObject);
             }
