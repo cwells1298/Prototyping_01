@@ -9,14 +9,45 @@ public class Target : MonoBehaviour
     public TargetCollection tc;
 
     public Slider healthSlider;
+    public Image sliderFill;
 
     public bool isDead = false;
+
+    public bool isInvulnerable = false;
+
+    private AudioSource audioSource;
+
+    public float deathTimeMax = 0.5f;
+    public float deathTimecurrent = 0.0f;
+    public bool isDying = false;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        if (isDying)
+        {
+            deathTimecurrent += Time.deltaTime;
+            if (deathTimecurrent>=deathTimeMax)
+            {
+                deathTimecurrent = 0.0f;
+                isDying = false;
+                currentHealth = 0.0f;
+                healthSlider.value = currentHealth;
+
+                tc.TargetDestroyed(this);
+
+                isDead = true;
+
+                transform.parent.gameObject.SetActive(false);
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -28,31 +59,29 @@ public class Target : MonoBehaviour
             {
                 projectile.ResetProjectile();
                 TakeDamage(projectile.GetDamage());
+
+                audioSource.Play(0);
             }
         }
     }
 
     private void TakeDamage(float dam)
     {
-        currentHealth -= dam;
-
-        if (currentHealth <= 0.0f)
+        if (!isInvulnerable)
         {
-            currentHealth = 0.0f;
-            healthSlider.value = currentHealth;
+            currentHealth -= dam;
 
-            tc.TargetDestroyed(this);
+            if (currentHealth <= 0.0f)
+            {
+                isDying = true;
 
-            isDead = true;
+                //Destroy(transform.parent.gameObject);
+            }
+            else
+            {
 
-            transform.parent.gameObject.SetActive(false);
-
-            //Destroy(transform.parent.gameObject);
-        }
-        else
-        {
-
-            healthSlider.value = currentHealth;
+                healthSlider.value = currentHealth;
+            }
         }
     }
 }

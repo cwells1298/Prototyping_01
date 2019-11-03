@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class DestructibleObject : MonoBehaviour
 {
     public GameObject mainObject;
@@ -9,6 +9,9 @@ public class DestructibleObject : MonoBehaviour
     public float maxHealth = 2.0f;
     [SerializeField]
     private float currentHealth = 0.0f;
+
+    public GameObject upgradeUI;
+    public TextMeshProUGUI upgradeCost;
 
     public bool isActive = true;
 
@@ -18,9 +21,13 @@ public class DestructibleObject : MonoBehaviour
         {
             Activate();
         }
+        else
+        {
+            Deactivate();
+        }
     }
 
-    private void Activate()
+    public void Activate()
     {
         mainObject.SetActive(true);
         currentHealth = maxHealth;

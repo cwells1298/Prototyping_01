@@ -12,6 +12,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Pencil_Temp
       objectReference: {fileID: 0}
+    - target: {fileID: 7285703912806122654, guid: 81c04b84be18c6142b1609ce6902b707,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: be892a21d22bafb43b2a2b2f8e4df0bb,
+        type: 2}
+    - target: {fileID: 7285703912806122654, guid: 81c04b84be18c6142b1609ce6902b707,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 02cb39b32461dae4a882beaacdfcb85a, type: 3}
+    - target: {fileID: 8942232043241595252, guid: 81c04b84be18c6142b1609ce6902b707,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -4728807580002398413, guid: 02cb39b32461dae4a882beaacdfcb85a,
+        type: 3}
+    - target: {fileID: 6380410239547047201, guid: 81c04b84be18c6142b1609ce6902b707,
+        type: 3}
+      propertyPath: maxHealth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6380410239547047201, guid: 81c04b84be18c6142b1609ce6902b707,
+        type: 3}
+      propertyPath: goldPayout
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6380712246565160152, guid: 81c04b84be18c6142b1609ce6902b707,
+        type: 3}
+      propertyPath: rotationMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397325732908375437, guid: 81c04b84be18c6142b1609ce6902b707,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 9054928168843377129, guid: 02cb39b32461dae4a882beaacdfcb85a,
+        type: 3}
+    - target: {fileID: 3397325732908375437, guid: 81c04b84be18c6142b1609ce6902b707,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 6098924145076851180, guid: 02cb39b32461dae4a882beaacdfcb85a,
+        type: 3}
+    - target: {fileID: 3397325732908375437, guid: 81c04b84be18c6142b1609ce6902b707,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 4835078630258379571, guid: 02cb39b32461dae4a882beaacdfcb85a,
+        type: 3}
     - target: {fileID: 90694407435115330, guid: 81c04b84be18c6142b1609ce6902b707,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,44 +117,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8942232043241595252, guid: 81c04b84be18c6142b1609ce6902b707,
+    - target: {fileID: 4915822872721714941, guid: 81c04b84be18c6142b1609ce6902b707,
         type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -4728807580002398413, guid: 02cb39b32461dae4a882beaacdfcb85a,
-        type: 3}
-    - target: {fileID: 3397325732908375437, guid: 81c04b84be18c6142b1609ce6902b707,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 9054928168843377129, guid: 02cb39b32461dae4a882beaacdfcb85a,
-        type: 3}
-    - target: {fileID: 3397325732908375437, guid: 81c04b84be18c6142b1609ce6902b707,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 6098924145076851180, guid: 02cb39b32461dae4a882beaacdfcb85a,
-        type: 3}
-    - target: {fileID: 3397325732908375437, guid: 81c04b84be18c6142b1609ce6902b707,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 4835078630258379571, guid: 02cb39b32461dae4a882beaacdfcb85a,
-        type: 3}
-    - target: {fileID: 6380712246565160152, guid: 81c04b84be18c6142b1609ce6902b707,
-        type: 3}
-      propertyPath: rotationMax
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6380410239547047201, guid: 81c04b84be18c6142b1609ce6902b707,
-        type: 3}
-      propertyPath: maxHealth
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6380410239547047201, guid: 81c04b84be18c6142b1609ce6902b707,
-        type: 3}
-      propertyPath: goldPayout
-      value: 6
+      propertyPath: m_LocalPosition.y
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 788876291998280614, guid: 81c04b84be18c6142b1609ce6902b707,
         type: 3}
@@ -127,16 +143,5 @@ PrefabInstance:
       propertyPath: maxShootRate
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 7285703912806122654, guid: 81c04b84be18c6142b1609ce6902b707,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: be892a21d22bafb43b2a2b2f8e4df0bb,
-        type: 2}
-    - target: {fileID: 7285703912806122654, guid: 81c04b84be18c6142b1609ce6902b707,
-        type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 02cb39b32461dae4a882beaacdfcb85a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81c04b84be18c6142b1609ce6902b707, type: 3}

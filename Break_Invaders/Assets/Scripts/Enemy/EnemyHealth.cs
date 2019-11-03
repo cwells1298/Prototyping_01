@@ -16,6 +16,16 @@ public class EnemyHealth : MonoBehaviour
 
     private Animator anim;
 
+    private AudioSource audioSource;
+
+    public AudioClip deathSound;
+
+
+    public float deathTimeMax = 0.5f;
+    public float deathTimecurrent = 0.0f;
+    public bool isDying = false;
+
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -24,6 +34,8 @@ public class EnemyHealth : MonoBehaviour
         ec = GetComponent<EnemyController>();
 
         anim = GetComponent<Animator>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -31,6 +43,24 @@ public class EnemyHealth : MonoBehaviour
         if (!WaveHandler.waveActive)
         {
             WaveEnd();
+        }
+
+        if (isDying)
+        {
+            deathTimecurrent += Time.deltaTime;
+            if (deathTimecurrent >= deathTimeMax)
+            {
+                deathTimecurrent = 0.0f;
+                isDying = false;
+                currentHealth = 0.0f;
+                ec.firePos.healthSlider.value = currentHealth;
+                sc.AddToScore(goldPayout);
+                ec.firePos.inUse = false;
+                ec.firePos.healthCanvas.SetActive(false);
+                FirePosScoreIndicator fpsi = ec.firePos.gameObject.GetComponent<FirePosScoreIndicator>();
+                fpsi.TriggerScore(goldPayout);
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -52,20 +82,17 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= dam;
 
         anim.SetTrigger("isHit");
+        
 
         if (currentHealth <= 0.0f)
         {
-            currentHealth = 0.0f;
-            ec.firePos.healthSlider.value = currentHealth;
-            sc.AddToScore(goldPayout);
-            ec.firePos.inUse = false;
-            ec.firePos.healthCanvas.SetActive(false);
-            FirePosScoreIndicator fpsi = ec.firePos.gameObject.GetComponent<FirePosScoreIndicator>();
-            fpsi.TriggerScore(goldPayout);
-            Destroy(gameObject);
+            isDying = true;
+            audioSource.clip = deathSound;
+            audioSource.Play(0);
         }
         else
         {
+            audioSource.Play(0);
             ec.firePos.healthSlider.value = currentHealth;
         }
     }
@@ -83,6 +110,7 @@ public class EnemyHealth : MonoBehaviour
         ec.firePos.healthSlider.value = currentHealth;
         ec.firePos.inUse = false;
         ec.firePos.healthCanvas.SetActive(false);
+        isDying = false;
         Destroy(gameObject);
     }
 }

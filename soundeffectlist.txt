@@ -1,0 +1,11 @@
+player dash
+button press
+clipboard hit target
+stapler hit target
+staple hit target
+pencil hit target
+standard bounce
+enemy hit
+shield bounce
+barrier destruction
+invulnerability activate
